@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Agent Dashboard</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media query for mobile */
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+                padding: 15px 0;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            section {
+                padding: 10px;
+            }
+        }
+
+        /* Tiles */
+        .tile-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .tile {
+            width: 250px;
+            height: 250px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .tile img {
+            max-width: 80%;
+            max-height: 80%;
+            margin-bottom: 10px;
+        }
+
+        /* Hover effect for desktop */
+        .tile:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hidden class to hide sections */
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Real Estate Agent Dashboard</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li onclick="showTab('home')">Home</li>
+            <li onclick="showTab('listings')">Listings</li>
+            <li onclick="showTab('clients')">Clients</li>
+            <li onclick="showTab('tools')">Tools</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to the Home tab!</p>
+        </section>
+
+        <section id="listings" class="hidden">
+            <h2>Listings</h2>
+            <p>Here you can view property listings.</p>
+        </section>
+
+        <section id="clients" class="hidden">
+            <h2>Clients</h2>
+            <p>Manage your clients in this tab.</p>
+        </section>
+
+        <section id="tools" class="hidden">
+            <h2>Tools</h2>
+            
+            <!-- Tiles -->
+            <div class="tile-container">
+                <!-- Placeholder Tiles -->
+                <div class="tile">
+                    <img src="placeholder1.jpg" alt="Placeholder 1">
+                    <p>Tool 1</p>
+                </div>
+                <!-- Add more tiles here -->
+                <div class="tile">
+                    <img src="placeholder2.jpg" alt="Placeholder 2">
+                    <p>Tool 2</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder3.jpg" alt="Placeholder 3">
+                    <p>Tool 3</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder4.jpg" alt="Placeholder 4">
+                    <p>Tool 4</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder5.jpg" alt="Placeholder 5">
+                    <p>Tool 5</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder6.jpg" alt="Placeholder 6">
+                    <p>Tool 6</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder7.jpg" alt="Placeholder 7">
+                    <p>Tool 7</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder8.jpg" alt="Placeholder 8">
+                    <p>Tool 8</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder9.jpg" alt="Placeholder 9">
+                    <p>Tool 9</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder10.jpg" alt="Placeholder 10">
+                    <p>Tool 10</p>
+                </div>
+                <!-- End of Placeholder Tiles -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Real Estate Agency</p>
+    </footer>
+
+    <!-- Add to Home Screen library -->
+    <link rel="stylesheet" href="addtohomescreen.css">
+    <script src="addtohomescreen.js"></script>
+
+    <script>
+        // Function to show a specific tab and hide others
+        function showTab(tabId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (section.id === tabId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        // Initialize Add to Home Screen
+        addToHomescreen({
+            autostart: false,  // Do not automatically prompt the user
+            startDelay: 5     // Delay the prompt by 5 seconds (optional)
+        });
+    </script>
+</body>
+</html>
