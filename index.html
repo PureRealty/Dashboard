@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Agent Dashboard</title>
     <style>
-        /* Base styles for desktop */
+        /* Base styles */
         body {
-            font-family: 'Roboto', sans-serif; /* Use Google Fonts for Roboto */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Light gray background */
+            background-color: #f4f4f4;
         }
 
         header {
@@ -20,34 +20,19 @@
             padding: 20px 0;
         }
 
-        nav {
-            background-color: #007bff;
-            padding: 10px 0;
-        }
-
         nav ul {
             list-style: none;
             padding: 0;
-            display: flex;
-            justify-content: center;
         }
 
         nav li {
+            display: inline;
             margin-right: 20px;
-        }
-
-        nav button {
+            cursor: pointer;
+            padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
-            border: none;
-            border-radius: 0;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-
-        nav button:hover {
-            background-color: #0056b3;
+            border-radius: 5px;
         }
 
         main {
@@ -57,7 +42,7 @@
         }
 
         section {
-            background-color: #fff; /* White background for sections */
+            background-color: #fff;
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
@@ -75,11 +60,6 @@
                 text-align: center;
             }
 
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
             nav li {
                 display: block;
                 margin: 10px 0;
@@ -94,7 +74,7 @@
             }
         }
 
-        /* Tile size toggle button */
+        /* Tiles */
         .tile-container {
             display: flex;
             flex-wrap: wrap;
@@ -103,54 +83,37 @@
 
         .tile {
             width: 250px;
-            height: 150px;
+            height: 250px;
             background-color: #fff;
             border: 1px solid #ccc;
             margin: 10px;
             padding: 20px;
             box-sizing: border-box;
-            cursor: pointer;
-            transition: transform 0.3s ease;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .small-tiles .tile {
-            width: 150px;
-            height: 100px;
-        }
-
-        /* Draggable tiles */
-        .draggable-tiles {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
         }
 
-        .draggable-tile {
-            width: 250px;
-            height: 150px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 20px;
-            box-sizing: border-box;
-            cursor: grab;
-            transition: transform 0.3s ease;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .draggable-tile.dragging {
-            opacity: 0.5;
-        }
-
-        /* Placeholder images */
         .tile img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 80%;
+            max-height: 80%;
+            margin-bottom: 10px;
+        }
+
+        /* Hover effect for desktop */
+        .tile:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hidden class to hide sections */
+        .hidden {
+            display: none;
         }
     </style>
 
@@ -164,10 +127,10 @@
 
     <nav>
         <ul>
-            <li><button onclick="showTab('home')">Home</button></li>
-            <li><button onclick="showTab('listings')">Listings</button></li>
-            <li><button onclick="showTab('clients')">Clients</button></li>
-            <li><button onclick="showTab('tools')">Tools</button></li>
+            <li onclick="showTab('home')">Home</li>
+            <li onclick="showTab('listings')">Listings</li>
+            <li onclick="showTab('clients')">Clients</li>
+            <li onclick="showTab('tools')">Tools</li>
         </ul>
     </nav>
 
@@ -190,16 +153,51 @@
         <section id="tools" class="hidden">
             <h2>Tools</h2>
             
-            <!-- Toggle button for tile size -->
-            <button id="toggleButton" onclick="toggleTileSize()">Toggle Tile Size</button>
-
-            <!-- Combined Tile and Draggable Tile container -->
-            <div class="tile-container draggable-tiles" id="draggableContainer">
-                <div class="draggable-tile" draggable="true" ondragstart="onDragStart(event, this)">
+            <!-- Tiles -->
+            <div class="tile-container">
+                <!-- Placeholder Tiles -->
+                <div class="tile">
                     <img src="placeholder1.jpg" alt="Placeholder 1">
-                    Tool 1
+                    <p>Tool 1</p>
                 </div>
                 <!-- Add more tiles here -->
+                <div class="tile">
+                    <img src="placeholder2.jpg" alt="Placeholder 2">
+                    <p>Tool 2</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder3.jpg" alt="Placeholder 3">
+                    <p>Tool 3</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder4.jpg" alt="Placeholder 4">
+                    <p>Tool 4</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder5.jpg" alt="Placeholder 5">
+                    <p>Tool 5</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder6.jpg" alt="Placeholder 6">
+                    <p>Tool 6</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder7.jpg" alt="Placeholder 7">
+                    <p>Tool 7</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder8.jpg" alt="Placeholder 8">
+                    <p>Tool 8</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder9.jpg" alt="Placeholder 9">
+                    <p>Tool 9</p>
+                </div>
+                <div class="tile">
+                    <img src="placeholder10.jpg" alt="Placeholder 10">
+                    <p>Tool 10</p>
+                </div>
+                <!-- End of Placeholder Tiles -->
             </div>
         </section>
     </main>
@@ -213,37 +211,6 @@
     <script src="addtohomescreen.js"></script>
 
     <script>
-        // Function to toggle tile size
-        function toggleTileSize() {
-            const tileContainer = document.querySelector('.draggable-tiles');
-            tileContainer.classList.toggle('small-tiles');
-
-            // Save tile size setting in a cookie
-            const isSmallTiles = tileContainer.classList.contains('small-tiles');
-            document.cookie = `tileSize=${isSmallTiles ? 'small' : 'large'}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-        }
-
-        // Check for saved tile size setting in cookie
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTileSize = getCookie('tileSize');
-            if (savedTileSize === 'small') {
-                toggleTileSize();
-            }
-        });
-
-        // Function to get the value of a cookie by name
-        function getCookie(name) {
-            const cookies = document.cookie.split(';');
-            for (let cookie of cookies) {
-                const parts = cookie.split('=');
-                const cookieName = parts[0].trim();
-                if (cookieName === name) {
-                    return parts[1];
-                }
-            }
-            return null;
-        }
-
         // Function to show a specific tab and hide others
         function showTab(tabId) {
             const sections = document.querySelectorAll('section');
@@ -260,43 +227,6 @@
         addToHomescreen({
             autostart: false,  // Do not automatically prompt the user
             startDelay: 5     // Delay the prompt by 5 seconds (optional)
-        });
-
-        // Function to handle drag start
-        function onDragStart(event, element) {
-            if (element.classList.contains('draggable-tile')) {
-                draggedTile = element;
-                event.dataTransfer.setData('text', element.innerText);
-                element.classList.add('dragging');
-            }
-        }
-
-        // Add drag-and-drop functionality to reorder tiles
-        let draggedTile = null;
-
-        document.addEventListener('dragstart', (event) => {
-            onDragStart(event, event.target);
-        });
-
-        document.addEventListener('dragover', (event) => {
-            event.preventDefault();
-        });
-
-        document.addEventListener('drop', (event) => {
-            event.preventDefault();
-            const droppedTile = event.target;
-            if (droppedTile.classList.contains('draggable-tile')) {
-                const temp = droppedTile.innerText;
-                droppedTile.innerText = event.dataTransfer.getData('text');
-                draggedTile.innerText = temp;
-
-                // Save the updated order in a cookie
-                const tileOrder = Array.from(document.querySelectorAll('.draggable-tile')).map(tile => tile.innerText).join(',');
-                document.cookie = `tileOrder=${tileOrder}; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/`;
-            }
-            if (draggedTile) {
-                draggedTile.classList.remove('dragging');
-            }
         });
     </script>
 </body>
