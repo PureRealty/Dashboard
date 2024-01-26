@@ -38,6 +38,7 @@
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   color: #ffffff;
   cursor: pointer;
   display: inline-flex;
@@ -124,7 +125,6 @@ button:disabled {
             flex-wrap: wrap;
             justify-content: flex-start;
             align: center;
-            box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
         }
 
         .tile {
@@ -137,7 +137,8 @@ button:disabled {
             box-sizing: border-box;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -160,8 +161,6 @@ button:disabled {
         /* Hidden class to hide sections */
         .hidden {
             display: none;
-        .flip-entry-last-modified {
-            visibility: hidden;
         }
     </style>
 
