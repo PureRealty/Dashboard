@@ -153,12 +153,34 @@ button:disabled {
             margin-top: 20px;
         
          }
+.toverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hover effect for desktop */
+@media (hover: hover) {
+    .tile:hover .tile-image {
+        display: none;
+    }
+
+    .tile:hover .toverlay {
+        display: flex;
+    }
 
 
         /* Hidden class to hide sections */
         .hidden {
             display: none;
         }
+}
     </style>
 
     <!-- Include Google Fonts -->
@@ -263,6 +285,22 @@ button:disabled {
     <link rel="stylesheet" href="addtohomescreen.css">
     <script src="addtohomescreen.js"></script>
 
+
+    <script>
+        function toggleText(element) {
+    var image = element.querySelector('.tile-image');
+    var text = element.querySelector('.toverlay');
+
+    // Check if the image is currently displayed
+    if (window.getComputedStyle(image).display !== 'none') {
+        image.style.display = 'none';
+        text.style.display = 'flex';
+    } else {
+        image.style.display = 'block';
+        text.style.display = 'none';
+    }
+}
+    </script>
     <script>
         // Function to show a specific tab and hide others
         function showTab(tabId) {
