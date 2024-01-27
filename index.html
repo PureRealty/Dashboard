@@ -40,7 +40,7 @@
   box-sizing: border-box;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   color: #ffffff;
-  cursor: pointer;
+ /* cursor: pointer;*/
   display: inline-flex;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -154,7 +154,7 @@ button:disabled {
         
          }
         .toverlay {
-            position: relative;
+            position: absolute;
             top: 0;
   bottom: 0;
   left: 0;
@@ -178,7 +178,13 @@ button:disabled {
   text-align: center;
             }
         
-        .tile:hover .toverlay {
+
+        /* Hover effect for desktop */
+        .tile:hover {
+            transform: scale(1.1);
+        }
+        
+        .tile:hover .toverlay{
 			opacity:1;       
             }
 
@@ -220,7 +226,7 @@ button:disabled {
                     	<div class="toverlay">
                         <div class="toverlaytext"><p>Unlock MLS Austin</p></div>
                     
-                </div>
+                </div></div>
                 <!-- Add more tiles here -->
                 <div class="tile">
                     <img src="https://www.zipformplus.com/css/images/zipFormPlus-rgb.png" alt="Zipform Plus">
