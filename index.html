@@ -164,19 +164,6 @@ button:disabled {
     justify-content: center;
     text-align: center;
 }
-
-/* Hover effect for desktop */
-@media (hover: hover) {
-    .tile:hover .tile-image {
-        display: none;
-    }
-
-    .tile:hover .toverlay {
-        display: flex;
-        position: absolute
-    }
-
-
         /* Hidden class to hide sections */
         .hidden {
             display: none;
@@ -287,20 +274,7 @@ button:disabled {
     <script src="addtohomescreen.js"></script>
 
 
-    <script>
-        function toggleText(element) {
-    var image = element.querySelector('.tile-image');
-    var text = element.querySelector('.toverlay');
-
-    // Check if the image is currently displayed
-    if (window.getComputedStyle(image).display !== 'none') {
-        image.style.display = 'none';
-        text.style.display = 'flex';
-    } else {
-        image.style.display = 'block';
-        text.style.display = 'none';
-    }
-}
+    
     </script>
     <script>
         // Function to show a specific tab and hide others
