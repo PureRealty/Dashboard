@@ -130,8 +130,7 @@ section {
             justify-content: center;
             align-items: center;
             cursor: pointer;
-              -webkit-transition: transform 0.3s ease; /* Safari and Chrome */
-  transition: transform 0.3s ease; /* Standard syntax */
+            
 }
 
         .tile-image {
@@ -140,20 +139,7 @@ section {
     margin: auto; /* Set margin to auto to center the image horizontally */
     display: block; /* Set display to block to remove any extra space around the image */
 }
-       .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-    transition: all .3s ease; 
 
-  background-color: #008CBA;
-  
-}
 
 .text {
   color: white;
@@ -168,19 +154,40 @@ section {
 }
 
 .tile:hover {
-  -webkit-transform: scale(1.1); /* Safari and Chrome */
+    -webkit-transform: scale(1.1); /* Safari and Chrome */
   transform: scale(1.1); /* Standard syntax */
+  transform-origin: center;
 }
 
 .tile:hover .overlay {
   opacity: 0.9;
   transition: opacity .3s;
+  transition: all .3s ease;
+
   }
+  
+  .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+     display: none;
+
+  background-color: #008CBA;
+ 
+  
+}
 
         /* Hidden class to hide sections */
         .hidden {
             display: none;
         }
+        
+
 }
     </style>
 
