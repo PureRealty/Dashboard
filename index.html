@@ -5,123 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Realty Technology Dashboard</title>
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/7YmJrLf5/PRE-Solo-copy.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
-        /* Base styles */
         body {
-            font-family: 'Gotham Light', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #005475;
-        }
-
-        header {
-            background-color: #ccb167;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-        }
-            header img {
-                height: 100px;
-                max-width: auto;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav li {
-            display: inline;
-            margin-right: 5px;
-            cursor: pointer;
-            padding: 1px 5px;
-        }
-        button {
-  align-items: center;
-  background-color: #0A66C2;
-  border: 0;
-  border-radius: 100px;
-  box-sizing: border-box;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-  color: #ffffff;
- /* cursor: pointer;*/
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #005475;
 }
 
-button:hover,
-button:focus { 
-  background-color: #16437E;
-  color: #ffffff;
+header {
+    background-color: #aaaaaa;
+    color: #fff;
+    text-align: center;
+    padding: 1px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
-button:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
+header img {
+    height: 100px;
+    width: auto; /* Use width instead of max-width for responsiveness */
+    display: block; /* Ensure the image is a block-level element */
+    padding-left: 2px; /* Add padding to the left of the image */
+
 }
 
-button:disabled { 
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
+nav ul {
+    list-style: none;
+    padding: 5px;
+    display: flex; /* Change to flex to align items */
+    justify-content: center; /* Center align the items */
+    background-color: #D0B772; /* Background color for the tabbed navigation */
+    
 }
 
-        main {
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+nav li {
+    margin-right: 5px;
+    cursor: pointer;
+    padding: 10px 20px; /* Increase padding for better click area */
+    transition: background-color 0.2s; /* Add transition for smooth color change */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    background-color: #005475; /* Default background color */
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
-        section {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
+    
+    
+}
 
-        }
+nav li a {
+    text-decoration: none; /* Remove underline from anchor tags */
+    color: #ffffff; /* Set text color */
+    
+}
 
-        /* Media query for mobile */
-        @media (max-width: 700px) {
-            header {
-                font-size: 18px;
-                padding: 15px 0;
-            }
+nav li:hover {
+    background-color: #d0d0d0; /* Change background color on hover */
+}
 
-            nav {
-                text-align: center;
-            }
+main {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+}
 
-            nav li {
-                display: block;
-                margin: 10px 0;
-            }
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+ /*   box-shadow:rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+}
 
-            main {
-                padding: 30px;
-            }
+/* Media query for mobile */
+@media (max-width: 700px) {
+    header {
+        font-size: 18px;
+        padding: 10px 0;
+    }
 
-            section {
-                padding: 10px;
-            }
-        }
+    nav {
+        text-align: center;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    section {
+        padding: 5px;
+    }
+}
 
         /* Tiles */
         .tile-container {
@@ -129,7 +107,12 @@ button:disabled {
             flex-wrap: wrap;
             justify-content: flex-start;
             align: center;
-        }
+           
+    justify-content: center; /* Change to center for horizontal centering */
+    align-items: center; /* Add align-items to center vertically */
+    text-align: center; /* Center align the content inside the tiles */
+}
+        
 
         .tile {
             width: 250px;
@@ -137,7 +120,7 @@ button:disabled {
             background-color: #fff;
             border: 1px solid #ccc;
             margin: 10px;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
             border-radius: 8px;
             overflow: hidden;
@@ -147,21 +130,34 @@ button:disabled {
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+              -webkit-transition: transform 0.3s ease; /* Safari and Chrome */
+  transition: transform 0.3s ease; /* Standard syntax */
+}
 
         .tile-image {
-            max-width: 90%;
-            max-height: 90%;
-            margin-top: 10px;
-            }
-            .tile-text {
-            justify-content: bottom;
-            margin-bottom: 0px
-            
-            
-        
-         }
+       max-width: 90%;
+    max-height: 90%;
+    margin: auto; /* Set margin to auto to center the image horizontally */
+    display: block; /* Set display to block to remove any extra space around the image */
+}
+       /* .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA; */
+}
+
+.tile:hover {
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  transform: scale(1.5); /* Standard syntax */
+}
+  
 
         /* Hidden class to hide sections */
         .hidden {
@@ -175,13 +171,10 @@ button:disabled {
 </head>
 <body>
     <header>
-        <h1><a href="https://dashboard.purerealty.com"><img src="https://i.postimg.cc/nhWsMwKZ/PUREDASH.png" alt="PureDash"></a></h1>
-    </header>
-
-    <nav>
+        <h1><a href="https://dashboard.purerealty.com"><img src="https://i.postimg.cc/nhWsMwKZ/PUREDASH.png" alt="PureDash"></a></h1><nav>
         <ul>
-            <li> <button onclick="showTab('tools')">Tools</button></li>
-            <li> <button onclick="showTab('resources')">Resources</button></li>
+            <li> <a onclick="showTab('tools')">Tools</a></li>
+            <li> <a onclick="showTab('resources')">Resources</a></li>
 
             <!--HIDE
             <li onclick="showTab('home')">Home</li>
@@ -190,6 +183,9 @@ button:disabled {
             
         </ul>
     </nav>
+    </header>
+
+    
 
     <main>
         <section id="tools" >
@@ -198,11 +194,13 @@ button:disabled {
             <div class="tile-container">
                 <!-- Placeholder Tiles -->
                 <div class="tile">
-                    <a href="https://matrix.abor.com">
-                      <img src="https://cdn.clareitysecurity.net/sys/austin/Login-Page-Logo%20(1).png" alt="UnlockMLS Austin" class="tile-image"/>
-                        </a> 
-                        <div class="tile-text"><p>ABOR MLS</p></div>
-                </div>
+  <a href="https://matrix.abor.com">
+    <div class="tile-image">
+      <img src="https://cdn.clareitysecurity.net/sys/austin/Login-Page-Logo%20(1).png" alt="UnlockMLS Austin" class="tile-image"/>
+    </div>
+  </a>
+  <div class="overlay"><!--texthere--></div>
+</div>
                 <!-- Add more tiles here -->
                 <div class="tile">
                     <a href="https://matrix.abor.com">
@@ -259,9 +257,15 @@ button:disabled {
 
     <!-- Add to Home Screen library -->
     <link rel="stylesheet" href="addtohomescreen.css">
+    
+    
     <script src="addtohomescreen.js"></script>
-
-
+<script>
+  // Initialize Add to Home Screen
+        addToHomescreen({
+            autostart: false,  // Do not automatically prompt the user
+            startDelay: 5     // Delay the prompt by 5 seconds (optional)
+        });
     
     </script>
     <script>
@@ -277,11 +281,15 @@ button:disabled {
             });
         }
 
-        // Initialize Add to Home Screen
-        addToHomescreen({
-            autostart: false,  // Do not automatically prompt the user
-            startDelay: 5     // Delay the prompt by 5 seconds (optional)
-        });
+      
     </script>
+    <script>
+    function showOverlay(tile) {
+      if (window.innerWidth < 768) {
+        var overlay = tile.querySelector('.overlay');
+        overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
+      }
+    }
+  </script>
 </body>
 </html>
