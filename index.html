@@ -140,7 +140,7 @@ section {
     margin: auto; /* Set margin to auto to center the image horizontally */
     display: block; /* Set display to block to remove any extra space around the image */
 }
-       /* .overlay {
+       .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -149,15 +149,33 @@ section {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA; */
+    transition: all .3s ease; 
+
+  background-color: #008CBA;
+  
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .tile:hover {
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  transform: scale(1.5); /* Standard syntax */
+  -webkit-transform: scale(1.1); /* Safari and Chrome */
+  transform: scale(1.1); /* Standard syntax */
 }
-  
+
+.tile:hover .overlay {
+  opacity: 0.9;
+  transition: opacity .3s;
+  }
 
         /* Hidden class to hide sections */
         .hidden {
@@ -199,8 +217,10 @@ section {
       <img src="https://cdn.clareitysecurity.net/sys/austin/Login-Page-Logo%20(1).png" alt="UnlockMLS Austin" class="tile-image"/>
     </div>
   </a>
-  <div class="overlay"><!--texthere--></div>
-</div>
+  <div class="overlay">
+  <div class="text">UNLOCK MLS</div>
+  </div>
+	</div>
                 <!-- Add more tiles here -->
                 <div class="tile">
                     <a href="https://matrix.abor.com">
