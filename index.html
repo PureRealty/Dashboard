@@ -182,6 +182,7 @@ section {
   padding-top: 30px;
   height: 0;
   overflow: auto;
+  allowtransparency: true;
   -webkit-overflow-scrolling: touch; /*<<--- THIS IS THE KEY*/ 
   border: solid black 1px;
 }
@@ -205,13 +206,13 @@ section {
 </head>
 <body>
     <header>
-        <h1><a href="https://dashboard.purerealty.com"><img src="https://i.postimg.cc/nhWsMwKZ/PUREDASH.png" alt="PureDash"></a></h1><nav>
+        <h1><a href="https://dash.purerealty.com"><img src="https://i.postimg.cc/nhWsMwKZ/PUREDASH.png" alt="PureDash"></a></h1><nav>
         <ul>
             <li> <a onclick="showTab('tools')">PureDash</a></li>
             <li> <a onclick="showTab('resources')">PureResource</a></li>
             <li> <a onclick="showTab('pams')">PureAdvantage</a></li>
-	    <li> <a onclick="showtab('puretransact')">PureTransact</a></li>
-	<!-- <li> <a onclick="showTab('listings')">Listings</a></li> -->
+	   <!-- <li> <a onclick="showtab('transact')">PureTransact</a></li>
+	 		<li> <a onclick="showTab('listings')">Listings</a></li> -->
             
         </ul>
     </nav>
@@ -360,7 +361,7 @@ section {
             <h2>Resources</h2>
             <p>Resources are hosted in Google Drive and available to Pure Realty Agents through the links below.  Please open the requested resource and select "Make a copy" to edit the file yourself.</p>
         </br>
-            <iframe class="myIframe" src="https://drive.google.com/embeddedfolderview?id=1nhcBGiUj4fNDpEfJCwy0iifOzVs7DBTR#list" style="width:100%; height:600px; border:0;"></iframe>
+            <iframe class="myIframe" src="https://drive.google.com/embeddedfolderview?id=1nhcBGiUj4fNDpEfJCwy0iifOzVs7DBTR#list" style="width:100%; height:600px; border:0;overflow: hidden; align:center;"></iframe>
         </br>   
         </section>
 
@@ -368,13 +369,14 @@ section {
             <h2>Pure Advantage Marketing System</h2>
             <p>Welcome to the Home tab!</p>
         </section>
+        
+        <section id="transact" class="hidden">
+            <h2>Pure Transact</h2>
+            <p>Welcome to the Home tab!
+            <iframe class="myIframe" src="https://form.jotform.com/232775412866161" style="width:100%"></iframe></p>
+        </section>
 
-	<section id="transact" class="hidden">
-		<h2>Pure Transact</h2>
-	</br>
-		<iframe class="myIframe" src="https://form.jotform.com/232775412866161" style="width:100%"></iframe>
-   
-	</section>
+		
     </main>
 
     <footer>
