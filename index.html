@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/7YmJrLf5/PRE-Solo-copy.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <style>
-        body {
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -27,7 +27,6 @@ header img {
     width: auto; /* Use width instead of max-width for responsiveness */
     display: block; /* Ensure the image is a block-level element */
     padding-left: 2px; /* Add padding to the left of the image */
-
 }
 
 nav ul {
@@ -42,17 +41,24 @@ nav ul {
 nav li {
     margin-right: 5px;
     cursor: pointer;
-    padding: 10px 20px; /* Increase padding for better click area */
+    padding: 10px 10px; /* Increase padding for better click area */
     transition: background-color 0.2s; /* Add transition for smooth color change */
     border-radius: 5px; /* Add border radius for rounded corners */
-    background-color: #005475; /* Default background color */
-                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: #ffffff; /* Default background color */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 nav li a {
     text-decoration: none; /* Remove underline from anchor tags */
     color: #ffffff; /* Set text color */
 }
+
+nav li img {
+	max-height:40px;
+
+    display: block;
+    margin: auto;
+    }
 
 nav li:hover {
     background-color: #d0d0d0; /* Change background color on hover */
@@ -96,7 +102,7 @@ section {
 
     /* Center the tiles when there is only one column */
     .tile-container {
-        display: flex;
+        display: grid;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -156,7 +162,15 @@ section {
     margin: auto; /* Set margin to auto to center the image horizontally */
     display: block; /* Set display to block to remove any extra space around the image */
 }
-
+table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 0px solid black;
+            text-align: left;
+            padding: 5px;
+        }
 
 .text {
   color: white;
@@ -230,13 +244,24 @@ section {
 </head>
 <body>
     <header>
-        <h1><a href="https://dash.purerealty.com"><img src="https://i.postimg.cc/nhWsMwKZ/PUREDASH.png" alt="PureDash"></a></h1><nav>
-        <ul>
-            <li> <a onclick="showTab('tools')">PureDash</a></li>
-            <li> <a onclick="showTab('resources')">PureResource</a></li>
-            <li> <a onclick="showTab('pams')">PureAdvantage</a></li>
-	   <!-- <li> <a onclick="showtab('transact')">PureTransact</a></li>
-	 		<li> <a onclick="showTab('listings')">Listings</a></li> -->
+        <h1><a href="https://dash.purerealty.com"><img src="https://i.postimg.cc/TwbSWjLP/PUREDASHBOARD.png" alt="PureDash"></a></h1><nav>
+        <ul> 
+        
+        
+        <li> <a onclick="showTab('contact')">
+        <img src="x" alt="PureDashboard"></a></li> 
+        <li> <a onclick="showTab('guide')">
+        <img src="https://i.postimg.cc/zvdkTP4v/PUREGUIDE.png" alt="PureGuide"></a></li>
+   		<li> <a onclick="showtab('transact')">
+  		<img src="https://i.postimg.cc/B69XBLwV/PURETRANSACT.pngg" alt="PureTransact"></a></li>
+        <li> <a onclick="showTab('resources')">
+        <img src="https://i.postimg.cc/02ZkVSZQ/PURERESOURCES.png" alt="PureResource"></a></li>
+        <li> <a onclick="showTab('connect')">
+        <img src="https://i.postimg.cc/ZqyWNFjN/PRECONNECT.png" alt="PureConnect"></a></li>
+        <li> <a onclick="showTab('pams')">
+        <img src="https://i.postimg.cc/Dy7fQ6rH/PUREADVANTAGE.png" alt="PureAdvantage"></a></li>
+   
+        
             
         </ul>
     </nav>
@@ -249,25 +274,13 @@ section {
                         
                         <!-- Tiles -->
                 <div class="tile" height="100%" width="100%">
-                          <a href="https://matrix.abor.com">
+                          <a href="https://purerealty.backagent.net">
                                     <div class="tile-image">
-                                              <img src="DONE" alt="Unlock MLS Austin" class="tile-image"/>
+                                              <img src="https://i.postimg.cc/TwKNjrWR/image-1.png" alt="Workspace" class="tile-image"/>
                                 </div>
                                           </a>
                           <div class="overlay">
-                                                          <div class="text">Unlock MLS Austin
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://ctxmls.clareityiam.net/idp/login">
-                                    <div class="tile-image">
-                                              <img src="https://cdn.clareitysecurity.net/sys/ctxmls/CTXMLS-Logo.png" alt="CTXMLS" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">CTXMLS
+                                                          <div class="text">Workspace
                                                         </div>
                   </div>        </div>
                         <!-- Tile Space -->
@@ -285,42 +298,6 @@ section {
                         <!-- Tile Space -->
 
                 <div class="tile" height="100%" width="100%">
-                          <a href="https://purerealty.backagent.net">
-                                    <div class="tile-image">
-                                              <img src="https://i.postimg.cc/TwKNjrWR/image-1.png" alt="Workspace" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">Workspace
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://canva.com">
-                                    <div class="tile-image">
-                                              <img src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" alt="Canva" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">Canva
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://sites.google.com/purerealty.com/purerealty-officeguide/office-guide/office-basics">
-                                    <div class="tile-image">
-                                              <img src="https://i.postimg.cc/zvdkTP4v/PUREGUIDE.png" alt="PureGuide" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">PureGuide
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
                           <a href="https://docusign.net">
                                     <div class="tile-image">
                                               <img src="https://docucdn-a.akamaihd.net/olive/images/2.47.0/header-logos/docusign.svg" alt="DocuSign" class="tile-image"/>
@@ -333,49 +310,13 @@ section {
                         <!-- Tile Space -->
 
                 <div class="tile" height="100%" width="100%">
-                          <a href="https://motto.myagentloans.com">
+                          <a href="https://canva.com">
                                     <div class="tile-image">
-                                              <img src="https://cdn.lenderhomepage.com/themes/client/mottomtg/responsivetemplate21/img/logo-color-2.png" alt="Motto Mortgage" class="tile-image"/>
+                                              <img src="https://static.canva.com/web/images/12487a1e0770d29351bd4ce4f87ec8fe.svg" alt="Canva" class="tile-image"/>
                                 </div>
                                           </a>
                           <div class="overlay">
-                                                          <div class="text">Motto Mortgage
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://connect.purerealty.com">
-                                    <div class="tile-image">
-                                              <img src="https://i.postimg.cc/ZqyWNFjN/PRECONNECT.png" alt="PureConnect" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">PureConnect
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://transact.purerealty.com">
-                                    <div class="tile-image">
-                                              <img src="https://i.postimg.cc/B69XBLwV/PURETRANSACT.png" alt="PureTransact" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">PureTransact
-                                                        </div>
-                  </div>        </div>
-                        <!-- Tile Space -->
-
-                <div class="tile" height="100%" width="100%">
-                          <a href="https://purerealty.com">
-                                    <div class="tile-image">
-                                              <img src="https://i.postimg.cc/7YmJrLf5/PRE-Solo-copy.png" alt="PureRealty.com" class="tile-image"/>
-                                </div>
-                                          </a>
-                          <div class="overlay">
-                                                          <div class="text">PureRealty.com
+                                                          <div class="text">Canva
                                                         </div>
                   </div>        </div>
                         <!-- Tile Space -->
@@ -404,6 +345,174 @@ section {
                   </div>        </div>
                         <!-- Tile Space -->
 
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://rentapplication.net">
+                                    <div class="tile-image">
+                                              <img src="" alt="RentApplication" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">RentApplication
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="SellersShield" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">SellersShield
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://motto.myagentloans.com">
+                                    <div class="tile-image">
+                                              <img src="https://cdn.lenderhomepage.com/themes/client/mottomtg/responsivetemplate21/img/logo-color-2.png" alt="Motto Mortgage" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">Motto Mortgage
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="Texas National Title" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">Texas National Title
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://matrix.abor.com">
+                                    <div class="tile-image">
+                                              <img src="https://cdn.clareitysecurity.net/sys/austin/ABoR-Unlock-stacked.png" alt="Unlock MLS Austin" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">Unlock MLS Austin
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://transact.purerealty.com">
+                                    <div class="tile-image">
+                                              <img src="https://i.postimg.cc/B69XBLwV/PURETRANSACT.png" alt="ABOR" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">ABOR
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://connect.purerealty.com">
+                                    <div class="tile-image">
+                                              <img src="https://i.postimg.cc/ZqyWNFjN/PRECONNECT.png" alt="WCAOR" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">WCAOR
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="TravisCAD" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">TravisCAD
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="WCAD" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">WCAD
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://ctxmls.clareityiam.net/idp/login">
+                                    <div class="tile-image">
+                                              <img src="https://cdn.clareitysecurity.net/sys/ctxmls/CTXMLS-Logo.png" alt="CTXMLS" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">CTXMLS
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="https://sites.google.com/purerealty.com/purerealty-officeguide/office-guide/office-basics">
+                                    <div class="tile-image">
+                                              <img src="https://i.postimg.cc/zvdkTP4v/PUREGUIDE.png" alt="Highland Lakes" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">Highland Lakes
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="SABOR" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">SABOR
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="HAR" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">HAR
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+
+                <div class="tile" height="100%" width="100%">
+                          <a href="">
+                                    <div class="tile-image">
+                                              <img src="" alt="NTRIS" class="tile-image"/>
+                                </div>
+                                          </a>
+                          <div class="overlay">
+                                                          <div class="text">NTRIS
+                                                        </div>
+                  </div>        </div>
+                        <!-- Tile Space -->
+			
 			
             </div>
         </section>
@@ -434,11 +543,37 @@ section {
             <iframe class="myIframe" src="https://form.jotform.com/232775412866161" style="width:100%"></iframe></p>
         </section>
 
+		<section id="contact" class="hidden">
+            <h2>Contacts</h2>
+            <p>Brokerasdfasfdasdfasdf</p>
+            <table>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Title</th>
+  </tr>
+  <tr>
+    <td><img src="https://cdn.chime.me/image/fs/cmsbuild/2021107/23/w700_original_03595589-ffb3-487a-b6a3-cde860faa261.png" alt="Drew Bouffard"></td>
+    <td>Drew Bouffard</br>5128888888</td>
+    <td>Owner</td>
+  </tr>
+  <tr>
+    <td><img src="image2.jpg" alt="Susanna Boyer"></td>
+    <td>Susanna Boyer</td>
+    <td>Broker</td>
+  </tr>
+  <tr>
+    <td><img src="image3.jpg" alt="Image 3"></td>
+    <td>Description 3</td>
+  </tr>
+</table>
+            
+        </section>
 		
     </main>
 
     <footer>
-        <p>&copy; 2024 Pure Realty</p>
+        <p>&copy; 2024 Pure Realty - 3</p>
     </footer>
 
     <!-- Add to Home Screen library -->
