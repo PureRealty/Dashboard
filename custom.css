@@ -30,6 +30,7 @@ nav ul {
 
 nav li {
     margin-right: 5px;
+	width: 150px
     cursor: pointer;
     padding: 10px 10px; /* Increase padding for better click area */
     transition: background-color 0.2s; /* Add transition for smooth color change */
