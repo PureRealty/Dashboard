@@ -48,6 +48,7 @@ nav li img {
 	max-height:40px;
     display: block;
     margin: auto;
+	justify-content: center;
     }
 
 nav li:hover {
