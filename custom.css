@@ -227,6 +227,9 @@ table {
         .hidden {
             display: none;
         }
+
+
+
 .table-container {
     width: 100%;
     max-width: 600px;
@@ -242,11 +245,11 @@ table {
     border-collapse: collapse;
     margin: 0;
     padding: 0;
-    table-layout: fixed;
+    table-layout: grid;
 }
 
 th, td {
-  width; 100px;
+  width; 150px;
     padding: 8px 12px;
     border: 1px solid #ddd;
     text-align: left;
