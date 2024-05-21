@@ -152,15 +152,6 @@ section {
     margin: auto; /* Set margin to auto to center the image horizontally */
     display: block; /* Set display to block to remove any extra space around the image */
 }
-table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 0px solid black;
-            text-align: left;
-            padding: 5px;
-        }
 
 .text {
   color: white;
