@@ -422,9 +422,9 @@
         <div class="table-container">
         <table id="directory-table">
             <thead>
-         <!--       <tr id="table-header">
+      <tr id="table-header">
                    
-                </tr>   -->
+                </tr> 
             </thead>
             <tbody id="table-body">
                 <!-- Table data will be populated here -->
@@ -439,7 +439,7 @@
             }).then(function() {
                 return gapi.client.sheets.spreadsheets.values.get({
                     spreadsheetId: '1KlHMocqaO7qcM0hpImZeIbwJGEhXINV8yHL_yTg9KC8',
-                    range: 'Agent!A1:Z1000',
+                    range: 'Agent!A1:C170',
                 });
             }).then(function(response) {
                 const data = response.result.values;
