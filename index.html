@@ -419,7 +419,7 @@
             <h2>Contacts</h2>
             <p>Brokerasdfasfdasdfasdf</p>
         
-    <div class="table-container">
+        <div class="table-container">
         <table id="directory-table">
             <thead>
                 <tr id="table-header">
@@ -433,18 +433,15 @@
     </div>
     <script>
         function init() {
-            console.log('Initializing Google API client');
             gapi.client.init({
                 apiKey: 'AIzaSyBvw_UHCuvTYMqOWWfKVQ-ERQm2gtN0bO4',
                 discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"]
             }).then(function() {
-                console.log('Google API client initialized');
                 return gapi.client.sheets.spreadsheets.values.get({
-                    spreadsheetId: '1KlHMocqaO7qcM0hpImZeIbwJGEhXINV8yHL_yTg9KC8',
-                    range: 'Agent!A1:C190', // Adjust the range according to your needs
+                    spreadsheetId: '2PACX-1vQwvDoSrnDKMHmoBPaKVPXP4iU4wrWb6J9gqWmhxUpN8ytXOpUsqYC1KC6fJd2YI_ew-HZqLBHJRTTi',
+                    range: 'Sheet1!A1:Z1000',
                 });
             }).then(function(response) {
-                console.log('API Response:', response);
                 const data = response.result.values;
                 if (data) {
                     populateTable(data);
@@ -453,7 +450,6 @@
                 }
             }, function(response) {
                 console.error('Error fetching data:', response);
-                console.error('Full response:', JSON.stringify(response, null, 2));
             });
         }
 
