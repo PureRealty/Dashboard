@@ -26,6 +26,8 @@
     
     
     <script src="addtohomescreen.js"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+
 <script>
   // Initialize Add to Home Screen
         addToHomescreen({
@@ -416,34 +418,87 @@
 		<section id="contact" class="hidden">
             <h2>Contacts</h2>
             <p>Brokerasdfasfdasdfasdf</p>
-            <table>
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Title</th>
-  </tr>
-  <tr>
-    <td><img src="https://cdn.chime.me/image/fs/cmsbuild/2021107/23/w700_original_03595589-ffb3-487a-b6a3-cde860faa261.png" alt="Drew Bouffard"></td>
-    <td>Drew Bouffard</br>5128888888</td>
-    <td>Owner</td>
-  </tr>
-  <tr>
-    <td><img src="image2.jpg" alt="Susanna Boyer"></td>
-    <td>Susanna Boyer</td>
-    <td>Broker</td>
-  </tr>
-  <tr>
-    <td><img src="image3.jpg" alt="Image 3"></td>
-    <td>Description 3</td>
-  </tr>
-</table>
+        
+    <div class="table-container">
+        <table id="directory-table">
+            <thead>
+                <tr id="table-header">
+                    <!-- Table headers will be populated here -->
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Table data will be populated here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function init() {
+            console.log('Initializing Google API client');
+            gapi.client.init({
+                apiKey: 'AIzaSyBvw_UHCuvTYMqOWWfKVQ-ERQm2gtN0bO4',
+                discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"]
+            }).then(function() {
+                console.log('Google API client initialized');
+                return gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: '1KlHMocqaO7qcM0hpImZeIbwJGEhXINV8yHL_yTg9KC8',
+                    range: 'Agent!A1:C190', // Adjust the range according to your needs
+                });
+            }).then(function(response) {
+                console.log('API Response:', response);
+                const data = response.result.values;
+                if (data) {
+                    populateTable(data);
+                } else {
+                    console.error('No data found.');
+                }
+            }, function(response) {
+                console.error('Error fetching data:', response);
+                console.error('Full response:', JSON.stringify(response, null, 2));
+            });
+        }
+
+        function populateTable(data) {
+            const tableHeader = document.getElementById('table-header');
+            const tableBody = document.getElementById('table-body');
+
+            // Clear existing content
+            tableHeader.innerHTML = '';
+            tableBody.innerHTML = '';
+
+            // Populate headers
+            if (data.length > 0) {
+                const headerRow = document.createElement('tr');
+                data[0].forEach(header => {
+                    const th = document.createElement('th');
+                    th.textContent = header;
+                    headerRow.appendChild(th);
+                });
+                tableHeader.appendChild(headerRow);
+
+                // Populate rows
+                data.slice(1).forEach(row => {
+                    const tableRow = document.createElement('tr');
+                    row.forEach(cell => {
+                        const td = document.createElement('td');
+                        td.textContent = cell;
+                        tableRow.appendChild(td);
+                    });
+                    tableBody.appendChild(tableRow);
+                });
+            }
+        }
+
+        gapi.load('client', init);
+    </script>
             
         </section>
 		
     </main>
 
     <footer>
-        <p>&copy; 2024 Pure Realty</p>
+        <p>&copy; 2024 Pure Realty</p> 
+	    
+	    <a onclick="showTab('contact')"></a></li>
     </footer>
 
     
