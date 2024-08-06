@@ -671,7 +671,68 @@ function tableNarrow() {
 		<section id="contact" class="hidden">
             <h2>Office Roster</h2>
             <p></p>
-			<iframe src="https://www.google.com/maps/d/embed?mid=1BpZIZO5REu7INSW8vDdsk7ibcGXDS8Y&hl=en&ehbc=2E312F" width="640" height="480"></iframe>
+			 <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvw_UHCuvTYMqOWWfKVQ-ERQm2gtN0bO4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+        // Replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key
+        // Replace 'YOUR_GOOGLE_SHEETS_API_KEY' with your actual Google Sheets API key
+        // Replace 'YOUR_SHEET_ID' with your actual Google Sheet ID
+        const sheetId = '1KlHMocqaO7qcM0hpImZeIbwJGEhXINV8yHL_yTg9KC8';
+        const apiKey = 'AIzaSyBvw_UHCuvTYMqOWWfKVQ-ERQm2gtN0bO4';
+        const range = 'MAP!A2:C190'; // Adjust the range according to your sheet
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: { lat: 34.397, lng: -150.644 }
+            });
+
+            axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`)
+                .then(response => {
+                    const rows = response.data.values;
+                    rows.forEach(row => {
+                        const name = row[0];
+                        const street = row[1];
+                        const city = row[2];
+                        const address = `${street}, ${city}`;
+                        geocodeAddress(address, name, map);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data from Google Sheets:', error);
+                });
+        }
+
+          function geocodeAddress(address, name, map) {
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, (results, status) => {
+                if (status === 'OK') {
+                    console.log('Geocoded address:', address, 'with result:', results); // Debugging: Log geocoded results
+                    const marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        title: name
+                    });
+
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: `<div><strong>${name}</strong></div>`
+                    });
+
+                    marker.addListener('click', () => {
+                        infoWindow.open(map, marker);
+                    });
+
+                    map.setCenter(results[0].geometry.location);
+                } else {
+                    console.error('Geocode was not successful for the following reason:', status); // Debugging: Log geocoding status
+                }
+            });
+        }
+
+
+        window.onload = initMap;
+    </script>
         
         <div class="table-container">
 		<input type="text" id="myInput" onkeyup="tableNarrow()" placeholder="Search for names.." title="Type in a name">
