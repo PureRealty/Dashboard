@@ -21,28 +21,21 @@ function addMessage(text, className) {
 
 async function fetchGPTResponse(prompt) {
     try {
-        const response = await fetch('/api/gpt', {  // This points to the Vercel serverless function
+        const response = await fetch('/api/gpt', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify({ prompt })
         });
 
         const data = await response.json();
         if (data.error) {
-            addMessage('Error: Could not get response from GPT.', 'gpt-message');
+            console.error('Error:', data.error);
         } else {
-            const gptMessage = data.response;
-            addMessage(gptMessage, 'gpt-message');
+            console.log('Response:', data.response);
         }
     } catch (error) {
         console.error('Error fetching GPT response:', error);
-        addMessage('Error: Could not get response from GPT.', 'gpt-message');
     }
-}
-
-function toggleChatSidebar() {
-    const chatSidebar = document.getElementById('chat-sidebar');
-    chatSidebar.classList.toggle('open');
 }
